@@ -9,9 +9,11 @@ import os
 import sys
 import re
 
+# hack to set proper encoding on a mac
+reload(sys)
 sys.setdefaultencoding('utf8')
 
-prefix = 'ffka-'
+prefix = 'gluon-ffka-'
 branches = ['stable', 'beta', 'experimental']
 types = ['sysupgrade', 'factory']
 
