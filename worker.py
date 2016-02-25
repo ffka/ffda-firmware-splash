@@ -9,7 +9,9 @@ import os
 import sys
 import re
 
-prefix = 'gluon-ffda-'
+sys.setdefaultencoding('utf8')
+
+prefix = 'ffka-'
 branches = ['stable', 'beta', 'experimental']
 types = ['sysupgrade', 'factory']
 
@@ -60,7 +62,7 @@ db = FirmwareInfoContainer()
 versions = {}
 
 # pattern to parse version, model, extension from filename
-fn_pattern = re.compile("%s(?P<version>[\d.]+-?(\d*))-(?P<model>[a-z0-9-+\.]+)?\.[a-z]{3}" % prefix)
+fn_pattern = re.compile("%s(?P<version>[\d.]+-?(\d*))~[\w]{9,100}-(?P<model>[a-z0-9-+\.]+)?\.[a-z]{3}" % prefix)
 
 for branch in branches:
     for image_type in types:
